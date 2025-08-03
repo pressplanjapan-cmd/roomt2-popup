@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>背景画像スクロール表示</title>
+  <!-- ✅ 丸ゴシックWebフォントを読み込み -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rounded+M+Plus+1c:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Zen Maru Gothic', sans-serif; /* ← fallbackとしてsans-serif */
+    }
+
+    body {
+      background-image: url('web.png');
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: auto;
+    }
+
+    .page-content {
+      min-height: 3000px;
+    }
+
+    .fixed-popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fcd72b;
+      color: #333;
+      padding: 20px 24px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-decoration: none;
+      display: block;
+      width: 210px;
+      z-index: 9999;
+      font-size: 17px;
+      font-family: 'Rounded M Plus 1c', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    .fixed-popup .top-label {
+      background-color: #f0572d;
+      color: #fff;
+      font-weight: 700;
+      padding: 6px 0;
+      border-radius: 16px;
+      display: block;
+      margin: 0 -7px 10px;
+      text-align: center;
+    }
+
+    .fixed-popup .main-text {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .fixed-popup .sub-text {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.5;
+      position: relative;
+      padding-right: 60px;
+    }
+
+    .fixed-popup .arrow {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-image: url('arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50px 50px;
+      position: absolute;
+      top: 50%;
+      right: -5px;
+      transform: translateY(-50%);
+      box-sizing: border-box;
+    }
+
+    .fixed-popup:hover {
+      opacity: 0.95;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-content"></div>
+
+<a href="https://roomt2.com/signup" class="fixed-popup" target="_blank">
+  <div class="top-label">登録者数5,500名突破！</div>
+  <div class="main-text">RoomT2<br>メンバー会員募集中</div>
+  <div class="sub-text">
+    <span>最新お役立ち情報を<br>毎月お届けします</span>
+    <div class="arrow"></div>
+  </div>
+</a>
+
+</body>
+</html>
